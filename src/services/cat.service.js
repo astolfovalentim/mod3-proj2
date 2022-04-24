@@ -6,8 +6,8 @@ const findAllCatsService = async () => {
 };
 
 const findByIdCatService = async (idParam) => {
-  const Cat = await Cat.findById(idParam);
-  return Cat;
+  const cat = await Cat.findById(idParam);
+  return cat;
 };
 
 const createCatsService = (newCat) => {
