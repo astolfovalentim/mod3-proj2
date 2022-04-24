@@ -1,7 +1,8 @@
 const catsService = require("../services/cat.service");
+const mongoose = require("mongoose");
 
-const findAllCatsController = (req, res) => {
-  const cats = catsService.findAllCatsService();
+const findAllCatsController = async (req, res) => {
+  const cats = await catsService.findAllCatsService();
 
   if (cats.length == 0) {
     return res
@@ -11,13 +12,13 @@ const findAllCatsController = (req, res) => {
   res.send(cats);
 };
 
-const findByIdCatController = (req, res) => {
-  const idParam = Number(req.params.id);
+const findByIdCatController = async (req, res) => {
+  const idParam = req.params.id;
 
-  if (!idParam) {
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
     return res.status(400).send({ message: "Id inválido!" });
   }
-  const chosenCat = catsService.findByIdCatService(idParam);
+  const chosenCat = await catsService.findByIdCatService(idParam);
 
   if (!chosenCat) {
     return res.status(404).send({ message: "Personagem não encontrada!" });
