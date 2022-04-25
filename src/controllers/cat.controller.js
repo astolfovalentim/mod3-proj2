@@ -15,9 +15,6 @@ const findAllCatsController = async (req, res) => {
 const findByIdCatController = async (req, res) => {
   const idParam = req.params.id;
 
-  if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Id inválido!" });
-  }
   const chosenCat = await catsService.findByIdCatService(idParam);
 
   if (!chosenCat) {
@@ -29,55 +26,19 @@ const findByIdCatController = async (req, res) => {
 
 const createCatsController = async (req, res) => {
   const cat = req.body;
-  if (
-    !cat ||
-    !cat.personagem ||
-    !cat.descricao ||
-    !cat.habilidade ||
-    !cat.arma ||
-    !cat.foto
-  ) {
-    return res
-      .status(400)
-      .send({ message: "Envie todos os campos do personagem!" });
-  }
-
   const newCat = await catsService.createCatsService(cat);
   res.status(201).send(newCat);
 };
 
 const updateCatsController = async (req, res) => {
   const idParam = req.params.id;
-
-  if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Id inválido!" });
-  }
-
   const editCat = req.body;
-
-  if (
-    !editCat ||
-    !editCat.personagem ||
-    !editCat.descricao ||
-    !editCat.habilidade ||
-    !editCat.arma ||
-    !editCat.foto
-  ) {
-    return res
-      .status(400)
-      .send({ message: "Envie todos os campos da personagem!" });
-  }
-
   const updatedCat = await catsService.updateCatsService(idParam, editCat);
   res.send(updatedCat);
 };
 
 const deleteCatsController = async (req, res) => {
   const idParam = req.params.id;
-
-  if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Id inválido!" });
-  }
 
   const chosenCat = catsService.findByIdCatService(idParam);
 
