@@ -10,6 +10,7 @@ A linguagem utilizada é o JavaScript e as tecnologias são NodeJs, Express e Mo
 Os critérios de avaliação são:
 
 - Endpoints (Somando 2 pontos):
+
   - [GET] Leitura de todas os personagens (0,4 pontos);
   - [GET] Leitura de personagens individuais (por ID) (0,4 pontos).
   - [POST] Criação de personagens (0,4 pontos);
