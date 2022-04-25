@@ -2,14 +2,14 @@ const catsService = require("../services/cat.service");
 const mongoose = require("mongoose");
 
 const findAllCatsController = async (req, res) => {
-  const cats = await catsService.findAllCatsService();
+  const allCats = await catsService.findAllCatsService();
 
-  if (cats.length == 0) {
+  if (allCats.length == 0) {
     return res
       .status(404)
       .send({ message: "Não existe nenhum personagem cadastrado!" });
   }
-  res.send(cats);
+  res.send(allCats);
 };
 
 const findByIdCatController = async (req, res) => {
@@ -53,22 +53,22 @@ const updateCatsController = async (req, res) => {
     return res.status(400).send({ message: "Id inválido!" });
   }
 
-  const catEdit = req.body;
+  const editCat = req.body;
 
   if (
-    !catEdit ||
-    !catEdit.personagem ||
-    !catEdit.descricao ||
-    !catEdit.habilidade ||
-    !catEdit.arma ||
-    !catEdit.foto
+    !editCat ||
+    !editCat.personagem ||
+    !editCat.descricao ||
+    !editCat.habilidade ||
+    !editCat.arma ||
+    !editCat.foto
   ) {
     return res
       .status(400)
       .send({ message: "Envie todos os campos da personagem!" });
   }
 
-  const updatedCat = await catsService.updateCatsService(idParam, catEdit);
+  const updatedCat = await catsService.updateCatsService(idParam, editCat);
   res.send(updatedCat);
 };
 

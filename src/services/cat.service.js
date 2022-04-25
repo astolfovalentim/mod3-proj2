@@ -11,17 +11,17 @@ const findByIdCatService = async (idParam) => {
 };
 
 const createCatsService = async (newCat) => {
-  const catCreate = await Cat.create(newCat);
-  return catCreate;
+  const createCat = await Cat.create(newCat);
+  return createCat;
 };
 
-const updateCatsService = async (id, catEdit) => {
-  const catUpdate = await Cat.findByIdAndUpdate(id, catEdit);
-  return catUpdate;
+const updateCatsService = async (idParam, editCat) => {
+  const updateCat = await Cat.findByIdAndUpdate(idParam, editCat);
+  return updateCat;
 };
 
-const deleteCatsService = async (id) => {
-  return await Cat.findByIdAndDelete(id);
+const deleteCatsService = async (idParam) => {
+  return await Cat.findByIdAndDelete(idParam);
 };
 
 module.exports = {
