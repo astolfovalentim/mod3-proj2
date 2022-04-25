@@ -17,7 +17,7 @@ const createCatsService = async (newCat) => {
 
 const updateCatsService = async (idParam, editCat) => {
   const updateCat = await Cat.findByIdAndUpdate(idParam, editCat);
-  return updateCat;
+  return [updateCat, editCat];
 };
 
 const deleteCatsService = async (idParam) => {
