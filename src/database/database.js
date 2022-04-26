@@ -2,10 +2,13 @@ const mongoose = require("mongoose");
 
 const connectToDatabase = () => {
   mongoose
-    .connect("mongodb://localhost:27017/thundercats-db", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(
+      "mongodb+srv://root:admin@api-rickmorty.jwurt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
     .then(() => {
       console.log("MongoDb CONECTADO");
     })
