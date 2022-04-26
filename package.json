@@ -1,5 +1,5 @@
 {
-  "name": "mod3-proj2",
+  "name": "mod3-projeto3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/astolfovalentim/mod3-proj2.git"
+    "url": "git+https://github.com/astolfovalentim/mod3-projeto3.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/astolfovalentim/mod3-proj2/issues"
+    "url": "https://github.com/astolfovalentim/mod3-projeto3/issues"
   },
-  "homepage": "https://github.com/astolfovalentim/mod3-proj2#readme",
+  "homepage": "https://github.com/astolfovalentim/mod3-projeto3#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3",
