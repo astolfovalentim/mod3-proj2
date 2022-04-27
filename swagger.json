@@ -15,7 +15,7 @@
       "description": "API de teste"
     },
     {
-      "url": "https://api-elgeladon.herokuapp.com/paletas",
+      "url": "https://mod3-rick-morty.herokuapp.com/cats/api-docs/",
       "description": "API de produção"
     }
   ],
